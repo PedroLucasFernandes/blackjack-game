@@ -45,7 +45,7 @@ Mas temos uma diferença entre o sorteio inicial dos outros, já que o primeiro 
 
 Nos próximos sorteios temos o seguinte trecho de código:
 
-``bash
+```c
 voce[j] = (rand() % 10) + 1;
 pc[j] = (rand() % 10) + 1;
 		
@@ -56,7 +56,7 @@ while(voce[j] == voce[0] || voce[j] == voce[1]){
 while(pc[j] == pc[0] || pc[j] == pc[1]){
 	pc[j] = (rand() % 10) + 1;
 }
-``
+```
 
 Seu papel é evitar a duplicação de números, pois sabemos que em um baralho existem apenas 4 cartas de um mesmo número.
 
