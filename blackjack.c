@@ -129,10 +129,10 @@ int main(){
 			printf("Os dois passaram de 21!\n \n");
 		} else if (somavc == somapc && somavc <= 21){
 			printf("Empate!\n");
-			printf("Os dois tiveram a mesma pontuação!\n \n");
+			printf("Os dois tiveram a mesma pontuacao!\n \n");
 		}
 		
-		printf("Deseja jogar mais uma vez? \n");
+		printf("Quer jogar mais uma vez? \n");
 		printf("Digite \"1\" para SIM e \"2\" para NAO.\n");
 		
 		scanf("%d", &repita);
