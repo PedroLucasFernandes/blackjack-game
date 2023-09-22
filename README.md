@@ -80,4 +80,7 @@ if(somavc >= 21 || somapc >= 21){
 }
 ```
 
-A variável ``i``, como já mencionada, tem o papel de controlar o número de repetições disponíveis, permitindo no máximo 4 sorteios (o inicial mais 3). Quando colocamos essa verificação e igualamos ``i`` a 0, eliminamos qualquer possibilidade de um novo sorteio, consequentemente, fazendo o jogo se encerrar.
+A variável ``i``, como já mencionada, tem o papel de controlar o número de repetições disponíveis, permitindo no máximo 4 sorteios (o inicial mais 3). Quando colocamos essa verificação e igualamos ``i`` a 0, eliminamos qualquer possibilidade de um novo sorteio, consequentemente, fazendo o jogo se encerrar. Confira o exemplo: <br>
+![Exemplo](https://i.imgur.com/BhRIH1v.png)
+
+Aqui vemos que o jogo não disponibilizou a possibilidade de um 3º sorteio, finalizando a partida automaticamente quando eu ultrapassei os 21, e já deixando claro que o PC foi o vencedor.
