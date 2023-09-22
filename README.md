@@ -35,6 +35,7 @@ Algumas bibliotecas foram necessárias para o funcionamento do Blackjack:
 - ``#include<time.h>``: Possibilita o comando ``time(NULL)`` para conceder uma semente aleatória nos sorteios.
 - ``#include<stdlib.h>``: Disponibiliza as funções ``srand()`` e ``rand()``, que permitem o sorteio dos números no jogo.
 - ``#include<string.h>``: Responsável pelo ``strcat()``, que faz a concatenação de uma string no código.
+- ``#include<locale.h>``: Recebe os acentos usados no português através do comando ``setlocale(LC_ALL, "portuguese")``.
 
 ### Verificações e laços de repetição
 Uma variável de controle ``i`` foi feita com o valor "4" para ser condição em um laço de repetição além de uma verificação.
@@ -60,7 +61,7 @@ while(pc[j] == pc[0] || pc[j] == pc[1]){
 
 Seu papel é evitar a duplicação de números, pois sabemos que em um baralho existem apenas 4 cartas de um mesmo número.
 
-Por fim, temos algumas verificações para divulgar os resultados, pois você pode perder, empatar, ou vencer. Sem contar que este resultado pode ser justificado por motivos diferentes, você pode vencer por ter mais pontos, ou por seu adversário ter "estourado".
+Temos algumas verificações para divulgar os resultados, pois você pode perder, empatar, ou vencer. Sem contar que este resultado pode ser justificado por motivos diferentes, você pode vencer por ter mais pontos, ou por seu adversário ter "estourado".
 
 Confira as possíveis respostas:
 
@@ -70,3 +71,13 @@ Confira as possíveis respostas:
 - "Empate! Voce maior que PC"
 - "PC Ganhou! Os dois passaram de 21!"
 - "PC Ganhou! Voce passou de 21 e estourou!"
+
+Por fim, vale mencionar o seguinte trecho de código, que verifica se você ou a máquina já bateu 21 ou se ultrapassou essa marca. Caso isso aconteça, a partida será encerrada automaticamente divulgando os resultados.
+
+```c
+if(somavc >= 21 || somapc >= 21){
+	i = 0;
+}
+```
+
+A variável ``i``, como já mencionada, tem o papel de controlar o número de repetições disponíveis, permitindo no máximo 4 sorteios (o inicial mais 3). Quando colocamos essa verificação e igualamos ``i`` a 0, eliminamos qualquer possibilidade de um novo sorteio, consequentemente, fazendo o jogo se encerrar.
