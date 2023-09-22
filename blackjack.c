@@ -2,13 +2,17 @@
 #include<time.h>
 #include<stdlib.h>
 #include<string.h>
+#include<locale.h>
 
 int main(){
+	
+	setlocale(LC_ALL, "portuguese");
 	
 	int repita = 1;
 	
 	while(repita == 1){
 	
+		system("cls");
 	
 		int voce[5], pc[5], somavc, somapc, i = 4, j = 2, k, sorteio = 0, resposta;
 		char *strvc = "VC";
@@ -55,7 +59,11 @@ int main(){
 				somavc += voce[j];
 				somapc += pc[j];
 				
-				if(sorteio < 3){
+				if(somavc >= 21 || somapc >= 21){
+					i = 0;
+				}
+				
+				if(i != 0){
 				
 					strcat(strx, " + X");
 					
@@ -81,8 +89,8 @@ int main(){
 		
 			if(i > 0){
 			
-				printf("Deseja sortear mais um numero? \n");
-				printf("Digite \"1\" para SIM ou \"2\" para NAO. \n");
+				printf("Deseja sortear mais um número? \n");
+				printf("Digite \"1\" para SIM ou \"2\" para NÃO. \n");
 			
 				scanf("%d", &resposta);
 				
@@ -113,27 +121,27 @@ int main(){
 			printf(strd_eq, somapc); // _= %d\n
 		
 		if(somavc > somapc && somavc <= 21){
-			printf("Voce ganhou!\n");
-			printf("Voce maior que PC!\n \n");
+			printf("Você ganhou!\n");
+			printf("Você maior que PC!\n \n");
 		} else if(somapc > somavc && somapc <= 21){
 			printf("PC ganhou!\n");
-			printf("PC maior que Voce!\n \n");
+			printf("PC maior que você!\n \n");
 		} else if(somapc > 21 && somavc <= 21){
-			printf("Voce ganhou!\n");
+			printf("Você ganhou!\n");
 			printf("PC passou de 21 e estourou!\n \n");
 		} else if(somavc > 21 && somapc <= 21){
 			printf("PC ganhou!\n");
-			printf("Voce passou de 21 e estourou!\n \n");
+			printf("Você passou de 21 e estourou!\n \n");
 		} else if(somavc > 21 && somapc > 21){
 			printf("Empate!\n");
 			printf("Os dois passaram de 21!\n \n");
 		} else if (somavc == somapc && somavc <= 21){
 			printf("Empate!\n");
-			printf("Os dois tiveram a mesma pontuacao!\n \n");
+			printf("Os dois tiveram a mesma pontuação!\n \n");
 		}
 		
 		printf("Quer jogar mais uma vez? \n");
-		printf("Digite \"1\" para SIM e \"2\" para NAO.\n");
+		printf("Digite \"1\" para SIM e \"2\" para NÃO.\n");
 		
 		scanf("%d", &repita);
 	}
